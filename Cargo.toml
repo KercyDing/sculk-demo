@@ -2,6 +2,8 @@
 name = "sculk-demo"
 version = "0.1.0"
 edition = "2024"
+description = "A GUI demo for the sculk P2P tunnel library"
+license = "GPL-3.0"
 
 [package.metadata.bundle]
 name = "sculk demo"
@@ -11,8 +13,26 @@ copyright = "Copyright © 2025 KercyDing"
 category = "public.app-category.utilities"
 icon = ["assets/icon.icns", "assets/icon.ico"]
 
+[package.metadata.deb]
+depends = "$auto"
+assets = [
+    ["target/release/sculk-demo", "usr/bin/", "755"],
+    ["assets/icon.png", "usr/share/pixmaps/sculk-demo.png", "644"],
+    ["./sculk-demo.desktop", "usr/share/applications/", "644"],
+]
+
+[package.metadata.generate-rpm]
+assets = [
+    { source = "target/release/sculk-demo", dest = "/usr/bin/sculk-demo", mode = "755" },
+    { source = "assets/icon.png", dest = "/usr/share/pixmaps/sculk-demo.png", mode = "644" },
+    { source = "./sculk-demo.desktop", dest = "/usr/share/applications/sculk-demo.desktop", mode = "644" },
+]
+
 [dependencies]
 sculk = { version = "0.1.0", features = ["persist"] }
 eframe = "0.33"
 image = { version = "0.25", features = ["png"] }
 tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync"] }
+
+[target.'cfg(windows)'.build-dependencies]
+winresource = "0.1"
