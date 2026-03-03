@@ -2,6 +2,13 @@
 
 基于 [sculk](https://github.com/KercyDing/sculk) P2P 隧道库的 GUI 演示程序，使用 [egui](https://github.com/emilk/egui) 构建。
 
+## 实机效果
+
+<div style="display: flex; gap: 10px;">
+  <img width="1264" height="1240" alt="sculk demo-0303171806@2x" src="https://github.com/user-attachments/assets/cdbc2746-f66d-4837-a494-5a4104c898e9 " style="width: 45%;" />
+  <img width="1264" height="1240" alt="sculk demo-0303171928@2x" src="https://github.com/user-attachments/assets/bcaa0862-2a4a-47c3-a329-e93a148e3e3f " style="width: 45%;" />
+</div>
+
 ## 功能
 
 - **建房**：暴露本地 Minecraft 服务端，生成可分享的 `sculk://...` 票据
