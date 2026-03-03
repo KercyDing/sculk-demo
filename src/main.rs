@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 use eframe::egui;
 use sculk::persist::{self, Profile};
 use sculk::tunnel::{IrohTunnel, SecretKey, Ticket, TunnelConfig, TunnelEvent};
